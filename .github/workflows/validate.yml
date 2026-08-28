@@ -1,0 +1,43 @@
+name: Validate Lite release
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate package and checksum
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import pathlib
+          import zipfile
+
+          root = pathlib.Path.cwd()
+          manifest = json.loads((root / "release-manifest.json").read_text())
+          assert manifest["format_version"] == 1
+          assert len(manifest["releases"]) == 1
+          release = manifest["releases"][0]
+          assert release["edition"] == "lite"
+          archive = root / "releases" / release["archive"]
+          assert hashlib.sha256(archive.read_bytes()).hexdigest() == release["sha256"]
+          assert archive.stat().st_size == release["bytes"]
+          with zipfile.ZipFile(archive) as package:
+              names = package.namelist()
+              skill = release["skill_name"]
+              assert f"{skill}/SKILL.md" in names
+              assert all(name.startswith(f"{skill}/") for name in names)
+          skill_text = (root / release["skill_name"] / "SKILL.md").read_text()
+          assert "crm.coach/try-pipedrive" in skill_text
+          assert "your price is not increased" in skill_text
+          PY

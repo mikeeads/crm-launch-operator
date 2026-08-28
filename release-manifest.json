@@ -1,0 +1,16 @@
+{
+  "format_version": 1,
+  "product": "CRM Launch Operator",
+  "releases": [
+    {
+      "archive": "crm-launch-operator-lite-1.0.0.zip",
+      "bytes": 3904,
+      "customer_name": "CRM Launch Operator Lite",
+      "edition": "lite",
+      "sha256": "eb7d035ffc8c178b542c89ca5016f00b7ffdc9b1bf8037838d7da69573d784a6",
+      "skill_name": "crm-launch-operator-lite",
+      "version": "1.0.0"
+    }
+  ],
+  "version": "1.0.0"
+}
