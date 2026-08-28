@@ -1,0 +1,41 @@
+{
+  "author": {
+    "email": "mike@eads.io",
+    "name": "CRM Coach",
+    "url": "https://www.crm.coach"
+  },
+  "description": "A calm, platform-neutral CRM launch check for owners and revenue leaders.",
+  "homepage": "https://www.crm.coach/help/launch-operator-install",
+  "interface": {
+    "brandColor": "#0B5FFF",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Run a calm CRM Launch Check with me, one question at a time.",
+      "Help me clarify what our new CRM must make less painful.",
+      "Review my CRM launch check and suggest the next useful action."
+    ],
+    "developerName": "CRM Coach",
+    "displayName": "CRM Launch Operator Lite",
+    "longDescription": "Run a short, practical CRM Launch Check. The skill helps you name the problem, users, minimum-use rule, unanswered decisions, and proof of readiness, then leaves one local file and a sensible next action. It advises only: it never logs into or changes your CRM.",
+    "privacyPolicyURL": "https://www.crm.coach/privacy",
+    "shortDescription": "Clarify a CRM launch before setup choices multiply.",
+    "termsOfServiceURL": "https://www.crm.coach/terms",
+    "websiteURL": "https://www.crm.coach"
+  },
+  "keywords": [
+    "crm",
+    "launch",
+    "pipedrive",
+    "hubspot",
+    "sales-operations"
+  ],
+  "license": "Apache-2.0",
+  "name": "crm-launch-operator-lite",
+  "repository": "https://github.com/mikeeads/crm-launch-operator",
+  "skills": "./skills/",
+  "version": "1.1.0"
+}

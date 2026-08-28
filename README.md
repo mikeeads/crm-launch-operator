@@ -18,6 +18,16 @@ It does not log into or operate your CRM. Your answers stay in the workspace whe
 
 ## Install Lite
 
+Lite is available as a skills-only plugin for Codex and as a standalone ZIP for
+Claude or other compatible skill hosts. It has no network tools, CRM connection,
+or automatic support workflow.
+
+### Codex plugin
+
+Install the public plugin from the [CRM Launch Operator GitHub repository](https://github.com/mikeeads/crm-launch-operator), or use the public plugin directory when it becomes available. Then start a new thread and say:
+
+> Use $crm-launch-operator-lite to run a calm CRM Launch Check with me, one question at a time.
+
 ### Codex
 
 Download the latest ZIP from `releases/`, unzip it, and place the `crm-launch-operator-lite` folder in your user skills directory (normally `~/.agents/skills/`). Restart Codex if the skill is not picked up immediately.
@@ -52,3 +62,5 @@ Lite is useful on its own. The full edition is there when you want to work throu
 ## License
 
 The code and skill instructions in this repository are licensed under the [Apache License 2.0](LICENSE). The CRM Coach and CRM Launch Operator names and branding are not granted under that license; see [TRADEMARKS.md](TRADEMARKS.md).
+
+See [PRIVACY.md](PRIVACY.md), [TERMS.md](TERMS.md), [SUPPORT.md](SUPPORT.md), and [CONTRIBUTING.md](CONTRIBUTING.md) for the boundaries around using and improving the public skill.

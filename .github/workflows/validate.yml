@@ -24,6 +24,12 @@ jobs:
           import zipfile
 
           root = pathlib.Path.cwd()
+          plugin = json.loads((root / ".codex-plugin/plugin.json").read_text())
+          assert plugin["name"] == "crm-launch-operator-lite"
+          assert plugin["skills"] == "./skills/"
+          assert (root / "skills/crm-launch-operator-lite/SKILL.md").is_file()
+          for document in ("LICENSE", "TRADEMARKS.md", "PRIVACY.md", "TERMS.md", "SECURITY.md", "SUPPORT.md", "CONTRIBUTING.md"):
+              assert (root / document).is_file(), document
           manifest = json.loads((root / "release-manifest.json").read_text())
           assert manifest["format_version"] == 1
           assert len(manifest["releases"]) == 1
@@ -37,7 +43,7 @@ jobs:
               skill = release["skill_name"]
               assert f"{skill}/SKILL.md" in names
               assert all(name.startswith(f"{skill}/") for name in names)
-          skill_text = (root / release["skill_name"] / "SKILL.md").read_text()
+          skill_text = (root / "skills" / release["skill_name"] / "SKILL.md").read_text()
           assert "crm.coach/try-pipedrive" in skill_text
           assert "your price is not increased" in skill_text
           PY
