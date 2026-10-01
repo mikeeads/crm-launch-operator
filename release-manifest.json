@@ -3,14 +3,21 @@
   "product": "CRM Launch Operator",
   "releases": [
     {
-      "archive": "crm-launch-operator-lite-1.1.0.zip",
+      "archive": "crm-launch-operator-lite-1.2.0.zip",
       "bytes": 3904,
       "customer_name": "CRM Launch Operator Lite",
       "edition": "lite",
-      "sha256": "4db297f0485455ddcff0b850fbf10629ed4946f14b05f6d19d06baa8158c98bb",
+      "files": [
+        "SKILL.md",
+        "VERSION",
+        "agents/openai.yaml",
+        "assets/crm-launch-check.md",
+        "references/operating-standard.md"
+      ],
+      "sha256": "233ed5356e08af18af4cd3a4635fc57a660f76735cf41b5eb9c5e06ea84a7070",
       "skill_name": "crm-launch-operator-lite",
-      "version": "1.1.0"
+      "version": "1.2.0"
     }
   ],
-  "version": "1.1.0"
+  "version": "1.2.0"
 }

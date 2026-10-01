@@ -1,0 +1,7 @@
+interface:
+  display_name: "CRM Launch Operator Lite"
+  short_description: "Run a calm ten-minute CRM launch check"
+  default_prompt: "Use $crm-launch-operator-lite to run a calm CRM Launch Check with me, one question at a time."
+
+policy:
+  allow_implicit_invocation: true
